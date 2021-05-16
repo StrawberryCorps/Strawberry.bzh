@@ -33,6 +33,7 @@ export default {
     links: [
       {name: 'Accueil', url: '/'},
       {name: 'Nos projets', url: 'nos-projets'},
+      {name: 'Statistiques', url: 'stats'},
       {name: 'Status', url: 'status'},
       {name: 'Github', url: 'github'}
     ],

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Accueil from '../views/Accueil.vue'
 import Projets from "@/views/Projets";
+import Stats from "@/views/Stats";
 
 Vue.use(VueRouter)
 
@@ -20,9 +21,18 @@ const routes = [
     beforeEnter() {location.href = 'https://status.strawberrycorps.tech'}
   },
   {
+    path: '/discord',
+    beforeEnter() {location.href = 'https://discord.gg/R9rYZmsUXT'}
+  },
+  {
     path: '/nos-projets',
     name: 'NosProjets',
     component: Projets
+  },
+  {
+    path: '/stats',
+    name: 'Stats',
+    component: Stats
   }
 ]
 

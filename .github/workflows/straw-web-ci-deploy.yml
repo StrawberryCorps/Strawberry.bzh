@@ -23,4 +23,4 @@ jobs:
           known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
 
       - name: Git clone and deploy to docker
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /tmp; git clone git@github.com:StrawberryCorps/strawberrycorps.github.io.git; cd strawberrycorps.github.io; docker build . -t strawberrycorps-web; docker rm strawberrycorps-web; docker run -d -p 8080:80 strawberrycorps-web; cd ..; rm -rf /tmp/strawberrycorps.github.io.git"
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /tmp; git clone git@github.com:StrawberryCorps/strawberrycorps.github.io.git; cd strawberrycorps.github.io; docker build . -t strawberrycorps-web; docker stop strawberrycorps-web; docker rm strawberrycorps-web; docker run -d -p 8080:80 strawberrycorps-web --name strawberrycorps-web; cd ..; rm -rf /tmp/strawberrycorps.github.io.git"
