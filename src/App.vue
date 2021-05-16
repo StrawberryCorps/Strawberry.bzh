@@ -1,28 +1,41 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar color="primary" app flat>
+      <v-container class="py-0 fill-height">
+        <v-toolbar-title class="text-uppercase">StrawberryCorps</v-toolbar-title>
+        <v-spacer></v-spacer>
+         <v-btn
+              v-for="link in links"
+              :key="link.name"
+              :text="link.name !== 'Github'"
+              :rounded="link.name === 'Github'"
+              :color="link.name === 'Github' ? 'red':''"
+              :to="link.url"
+          >
+            {{ link.name }}
+          </v-btn>
+      </v-container>
+    </v-app-bar>
+
+    <v-main class="secondary">
+      <router-view/>
+    </v-main>
+
+    <Footer></Footer>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Footer from "@/components/Footer";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: {Footer},
+  data: () => ({
+    links: [
+      {name: 'Accueil', url: '/'},
+      {name: 'Nos projets', url: 'nos-projets'},
+      {name: 'Status', url: 'status'},
+      {name: 'Github', url: 'github'}
+    ],
+  }),
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
