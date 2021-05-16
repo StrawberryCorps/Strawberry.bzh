@@ -11,9 +11,21 @@
               :rounded="link.name === 'Github'"
               :color="link.name === 'Github' ? 'red':''"
               :to="link.url"
+              class="ml-2 hidden-sm-and-down"
           >
             {{ link.name }}
           </v-btn>
+        <v-app-bar-nav-icon class="hidden-md-and-up" @click="sidebar = !sidebar"></v-app-bar-nav-icon>
+        <v-navigation-drawer color="secondary" v-model="sidebar" app right hide-overlay temporary>
+          <v-list>
+            <v-list-item v-for="link in links"
+                         :key="link.name"
+                         :text="link.name !== 'Github'"
+                         :rounded="link.name === 'Github'"
+                         :color="link.name === 'Github' ? 'red':''"
+                         :to="link.url">{{link.name}}</v-list-item>
+          </v-list>
+        </v-navigation-drawer>
       </v-container>
     </v-app-bar>
 
@@ -30,6 +42,7 @@ import Footer from "@/components/Footer";
 export default {
   components: {Footer},
   data: () => ({
+    sidebar: false,
     links: [
       {name: 'Accueil', url: '/'},
       {name: 'Nos projets', url: 'nos-projets'},
