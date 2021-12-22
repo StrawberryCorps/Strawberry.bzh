@@ -46,7 +46,7 @@ const router = new VueRouter({
 
 Vue.use(VueGtag, {
   config: { id: 'G-9WEHXDWM3J' },
-  bootstrap: localStorage.getItem('rgpd:google-analytics') === 'true'
+  bootstrap: true
 }, router)
 
 export default router
