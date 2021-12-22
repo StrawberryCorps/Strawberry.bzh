@@ -4,6 +4,8 @@ import Accueil from '../views/Accueil.vue'
 import Projets from "@/views/Projets";
 import Stats from "@/views/Stats";
 
+import VueGtag from 'vue-gtag'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -41,5 +43,10 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+Vue.use(VueGtag, {
+  config: { id: 'G-9WEHXDWM3J' },
+  bootstrap: localStorage.getItem('rgpd:google-analytics') === 'true'
+}, router)
 
 export default router
