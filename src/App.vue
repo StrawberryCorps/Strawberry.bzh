@@ -33,12 +33,15 @@
       <router-view/>
     </v-main>
 
+      <cookie></cookie>
     <Footer></Footer>
   </v-app>
 </template>
 
 <script>
 import Footer from "@/components/Footer";
+import Cookie from "@/components/Cookie";
+
 export default {
   components: {Footer},
   data: () => ({
