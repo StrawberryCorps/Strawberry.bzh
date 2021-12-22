@@ -1,12 +1,12 @@
 <template>
   <v-snackbar v-model="isOpen" timeout="-1">
-    {{ $t("cookieConsent.message") }}
+    Strawberry souhaite utiliser les cookies de tracking
     <template v-slot:action="{ attrs }">
       <v-btn color="success" text v-bind="attrs" @click="accept">
-        {{ $t("cookieConsent.ok") }}
+        Oui, j'accepte
       </v-btn>
       <v-btn color="error" text v-bind="attrs" @click="deny">
-        {{ $t("cookieConsent.refuser") }}
+        Refuser
       </v-btn>
     </template>
   </v-snackbar>
