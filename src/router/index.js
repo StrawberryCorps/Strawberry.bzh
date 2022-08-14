@@ -16,15 +16,15 @@ const routes = [
   },
   {
     path: '/github',
-    beforeEnter() {location.href = 'https://github.com/StrawberryCorps'}
+    beforeEnter() {window.open('https://github.com/StrawberryCorps', "_blank")}
   },
   {
     path: '/status',
-    beforeEnter() {location.href = 'https://status.strawberrycorps.tech'}
+    beforeEnter() {window.open('https://status.eclixal.fr', "_blank")}
   },
   {
     path: '/discord',
-    beforeEnter() {location.href = 'https://discord.gg/R9rYZmsUXT'}
+    beforeEnter() {window.open('https://discord.gg/R9rYZmsUXT', '_blank')}
   },
   {
     path: '/nos-projets',
